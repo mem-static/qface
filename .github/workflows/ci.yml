@@ -47,8 +47,8 @@ jobs:
       - name: Commit changes
         shell: bash
         run: |
-          git add .
-          git commit -m "${{ inputs.message }}"
+          git add assets
+          git commit -m "update By CI"
 
       - name: Push to remote
         uses: ad-m/github-push-action@master
