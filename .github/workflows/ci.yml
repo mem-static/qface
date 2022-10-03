@@ -48,6 +48,7 @@ jobs:
         shell: bash
         run: |
           node index.js
+          cp ./README.md ./assets/README.md
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
