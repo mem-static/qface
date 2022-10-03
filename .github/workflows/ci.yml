@@ -2,9 +2,14 @@ name: 'CI'
 
 on:
   push:
-  workflow_dispatch:
+    branches: ['master']
   watch:
     types: started
+  workflow_dispatch:
+
+concurrency:
+  group: 'CI'
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -43,7 +48,7 @@ jobs:
         shell: bash
         run: |
           node index.js
-          
+
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
