@@ -12,7 +12,7 @@ Splice with the hosting root address to get image links.
 * `/id/{id}.gif`: select by id, dynamic
 * `/name/{name}.png`: select by name, static
 * `/name/{name}.gif`: select by name, dynamic
-* `/_/animated/{name}.png`: with extname '.png' but dynamic, in order to adapt old versions of Valine
+* `/_/animated/name/{name}.png`: with extname '.png' but dynamic, in order to adapt old versions of Valine
 
 ### Hosts
 
