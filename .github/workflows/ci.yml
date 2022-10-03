@@ -47,7 +47,8 @@ jobs:
       - name: Commit changes
         shell: bash
         run: |
-          git commit -m "${{ inputs.message }}" -a
+          git add .
+          git commit -m "${{ inputs.message }}"
 
       - name: Push to remote
         uses: ad-m/github-push-action@master
