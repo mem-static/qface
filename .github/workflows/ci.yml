@@ -28,7 +28,18 @@ jobs:
       #   run: |
       #     npm install
 
-      - name: Run Handler
+      - name: Setup git
+        shell: bash
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+      - name: Clone source repo
+        shell: bash
+        run: |
+          git clone https://github.com/koishijs/QFace
+
+      - name: Run handler
         shell: bash
         run: |
           node index.js
@@ -36,11 +47,9 @@ jobs:
       - name: Commit changes
         shell: bash
         run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
           git commit -m "${{ inputs.message }}" -a
 
-      - name: Git push
+      - name: Push to remote
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
