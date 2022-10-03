@@ -43,18 +43,8 @@ jobs:
         shell: bash
         run: |
           node index.js
-
-      - name: Git add
-        shell: bash
-        run: |
-          git add assets
-      
-      - name: Git commit
-        run: |
-          git commit -m "update by CI @${{ github.event.sender.login }}" --allow-empty
-
-      - name: Push to remote
-        uses: ad-m/github-push-action@master
+          
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          commit_message: CI @${{ github.event.sender.login }}
