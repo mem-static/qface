@@ -6,12 +6,13 @@ This project would not sync changes automatically however. If needed, you can tr
 
 ### Usage
 
-Splicing with the hosting root address to get image links.
+Splice with the hosting root address to get image links.
 
-* `/id/{id}.png`: static, with internal id `{id}`
-* `/id/{id}.gif`: dynamic, with internal id `{id}`
-* `/name/{name}.png`: static, face named as `{name}`
-* `/name/{name}.gif`: dynamic, face named as `{name}`
+* `/id/{id}.png`: select by id, static
+* `/id/{id}.gif`: select by id, dynamic
+* `/name/{name}.png`: select by name, static
+* `/name/{name}.gif`: select by name, dynamic
+* `/_/animated/{name}.png`: with extname '.png' but dynamic, in order to adapt old versions of Valine
 
 ### Hosts
 
