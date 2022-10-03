@@ -51,7 +51,7 @@ jobs:
       
       - name: Git commit
         run: |
-          git commit -m "update by CI @${{ github.event.sender.login }}"
+          git commit -m "update by CI @${{ github.event.sender.login }}" --allow-empty
 
       - name: Push to remote
         uses: ad-m/github-push-action@master
