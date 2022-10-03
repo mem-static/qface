@@ -18,6 +18,6 @@ Splice with the hosting root address to get image links.
 
 |Service|Hosting Root|Example|
 |:-:|---|:-:|
-|jsDelivr **(recommended)**|`https://cdn.jsdelivr.net/gh/mem-static/qface/assets`|![](https://cdn.jsdelivr.net/gh/mem-static/qface/assets/id/0.gif)|
-|~~mem.ac (not yet available)~~|`https://qface.mem.ac`||
+|mem.ac|`https://qface.mem.ac/{uri}`|![](https://qface.mem.ac/id/0.gif)|
+|jsDelivr|`https://cdn.jsdelivr.net/gh/mem-static/qface/assets/{uri}`|![](https://cdn.jsdelivr.net/gh/mem-static/qface/assets/id/0.gif)|
 
