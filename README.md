@@ -4,7 +4,7 @@ Yet another QQ Faces hosting service, automatically built from [koishijs/QFace](
 
 This project would not sync changes automatically however. If needed, you can trigger a CI build by starring this repository.
 
-### Usages
+### Usage
 
 Splicing with the hosting root address to get image links.
 
@@ -16,4 +16,4 @@ Splicing with the hosting root address to get image links.
 ### Hosts
 
 * jsDelivr (recommended): `https://cdn.jsdelivr.net/gh/mem-static/qface/assets` (Example: ![](https://cdn.jsdelivr.net/gh/mem-static/qface/assets/id/0.gif))
-* ~~qface.mem.ac (not yet available)~~
+* ~~mem.ac (not yet available): https://qface.mem.ac~~
