@@ -1,0 +1,47 @@
+name: 'CI'
+
+on:
+  push:
+  workflow_dispatch:
+  watch:
+    types: started
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      # - name: Cache dependence
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: ~/.npm
+      #     key: npm-${{ hashFiles('package-lock.json') }}
+      #     restore-keys: npm-
+
+      # - name: Install dependence
+      #   shell: bash
+      #   run: |
+      #     npm install
+
+      - name: Run Handler
+        shell: bash
+        run: |
+          node index.js
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -m "${{ inputs.message }}" -a
+
+      - name: Git push
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
