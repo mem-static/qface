@@ -44,11 +44,14 @@ jobs:
         run: |
           node index.js
 
-      - name: Commit changes
+      - name: Git add
         shell: bash
         run: |
           git add assets
-          git commit -m "update By CI"
+      
+      - name: Git commit
+        run: |
+          git commit -m "update by CI @${{ github.event.sender.login }}"
 
       - name: Push to remote
         uses: ad-m/github-push-action@master
